@@ -1,45 +1,84 @@
+
 import React from "react";
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import {
+  MagnifyingGlassIcon,
+  PlusCircleIcon,
+} from "@heroicons/react/24/outline";
+
+import {
+  HomeIcon,
+} from "@heroicons/react/24/solid";
 
 export default function Header() {
   return (
-    <div className="w-full border-b border-gray-100 bg-white sticky top-0 z-50">
-      <div className="flex items-center justify-between max-w-6xl mx-auto px-4 py-2">
-        {/* Desktop Logo */}
-        <div className="cursor-pointer h-12 w-32 relative hidden lg:block">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-md">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-3 sm:h-16 sm:px-6">
+
+        {/* Logo */}
+        <div className="flex shrink-0 cursor-pointer items-center">
+          {/* Desktop Logo */}
           <img
             src="/image/image.png"
             alt="Logo"
-            className="object-contain w-full h-full"
+            className="hidden h-12 w-32 object-contain lg:block"
           />
-        </div>
 
-        {/* Mobile Logo */}
-        <div className="cursor-pointer h-10 w-10 relative lg:hidden shrink-0">
+          {/* Mobile Logo */}
           <img
             src="/image/logo.png"
             alt="Logo"
-            className="object-contain w-full h-full"
+            className="h-9 w-9 object-contain lg:hidden"
           />
         </div>
 
-        {/* Middle: Search Box (Responsive sizing) */}
-        <div className="relative mx-2 sm:mx-4 max-w-xs w-full">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
-          </div>
+        {/* Search */}
+        <div className="relative min-w-0 max-w-md flex-1">
+          <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
+
           <input
-            type="text"
+            type="search"
             placeholder="Search"
-            className="w-full bg-gray-100 pl-10 pr-4 py-1.5 sm:py-2 text-sm rounded-lg border border-transparent focus:bg-white focus:border-black focus:outline-none transition-all duration-200"
+            aria-label="Search"
+            className="w-full rounded-full border border-transparent bg-gray-100 py-2 pl-10 pr-4 text-sm text-gray-800 outline-none transition-all duration-200 placeholder:text-gray-400 focus:border-gray-300 focus:bg-white focus:ring-2 focus:ring-gray-100"
           />
         </div>
 
-        {/* Right side */}
-        <div className="shrink-0">
-          <p className="font-medium text-sm sm:text-base text-gray-700">Right side</p>
-        </div>
+        {/* Navigation Icons */}
+        <nav className="flex shrink-0 items-center gap-3 sm:gap-5">
+
+          {/* Home */}
+          <button
+            type="button"
+            aria-label="Home"
+            className="hidden rounded-full p-1.5 transition hover:bg-gray-100 md:block"
+          >
+            <HomeIcon className="h-6 w-6 text-gray-800 transition-transform hover:scale-110" />
+          </button>
+
+          {/* Create Post */}
+          <button
+            type="button"
+            aria-label="Create post"
+            className="rounded-full p-1.5 transition hover:bg-gray-100"
+          >
+            <PlusCircleIcon className="h-6 w-6 text-gray-800 transition-transform hover:scale-110 sm:h-7 sm:w-7" />
+          </button>
+
+          {/* Profile */}
+          <button
+            type="button"
+            aria-label="Profile"
+            className="rounded-full p-0.5 transition hover:scale-105"
+          >
+            <img
+              src="https://i0.wp.com/www.cruciformcoc.com/wp-content/uploads/2019/05/Cross.jpg?resize=400%2C400&ssl=1"
+              alt="Profile"
+              className="h-8 w-8 rounded-full border border-gray-200 object-cover sm:h-9 sm:w-9"
+            />
+          </button>
+
+        </nav>
       </div>
-    </div>
+    </header>
   );
 }
