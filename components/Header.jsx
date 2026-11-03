@@ -52,7 +52,7 @@ export default function Header() {
             aria-label="Home"
             className="hidden rounded-full p-1.5 transition hover:bg-gray-100 md:block"
           >
-            <HomeIcon className="h-6 w-6 text-gray-800 transition-transform hover:scale-110" />
+            <HomeIcon className="h-6 w-6 text-gray-800 transition-transform hover:scale-110 cursor-pointer" />
           </button>
 
           {/* Create Post */}
@@ -61,8 +61,9 @@ export default function Header() {
             aria-label="Create post"
             className="rounded-full p-1.5 transition hover:bg-gray-100"
           >
-            <PlusCircleIcon className="h-6 w-6 text-gray-800 transition-transform hover:scale-110 sm:h-7 sm:w-7" />
+            <PlusCircleIcon className="h-6 w-6 text-gray-800 transition-transform hover:scale-110 sm:h-7 sm:w-7 cursor-pointer" />
           </button>
+
 
           {/* Profile */}
           <button
@@ -73,7 +74,7 @@ export default function Header() {
             <img
               src="https://i0.wp.com/www.cruciformcoc.com/wp-content/uploads/2019/05/Cross.jpg?resize=400%2C400&ssl=1"
               alt="Profile"
-              className="h-8 w-8 rounded-full border border-gray-200 object-cover sm:h-9 sm:w-9"
+              className="h-8 w-8 rounded-full border border-gray-200 object-cover sm:h-9 sm:w-9 cursor-pointer"
             />
           </button>
 

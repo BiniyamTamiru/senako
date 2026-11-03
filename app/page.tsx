@@ -1,13 +1,12 @@
-
+// app/page.tsx
 import Header from "../components/Header";
+import Feed from "../components/Feed"; // <-- NO curly braces!
+
 export default function Home() {
   return (
-      <div>
-        <head>
-          <title>Senako</title>
-        </head>
-
-     <Header />
-      </div>
+    <div className="bg-gray-50 min-h-screen">
+      <Header />
+      <Feed />
+    </div>
   );
 }
